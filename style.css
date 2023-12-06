@@ -1,0 +1,261 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: black;
+}
+
+.background
+{
+    background-image: url('resources/img/bg.jpg');
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-size: cover;
+    filter: blur(1.5vh);
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.foreground
+{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.090);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.phone_case
+{
+    background-color: white;
+    width: 40%;
+    border-radius: 0px 2.5vh 2.5vh 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.phone 
+{
+    width: 70%;
+}
+
+.main_content
+{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5vh;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.226);
+    color: white;
+}
+
+.main_content p
+{
+    width: 70vh;
+    font-size: 5vh;
+    margin-bottom: 4vh;
+}
+
+.main_content h1
+{
+    font-size: 8vh;
+}
+
+h1 strong
+{
+    color: #ffaa5b;
+}
+
+.main_content button
+{
+    width: 30vh;
+    height: 8vh;
+    border: none;
+    border-radius: 14px;
+    font-size: 4vh;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.226);
+    color: white;
+    background-color: #FFB978;
+    margin-bottom: 2vh;
+    transition: all 0.2s;
+    outline: solid white 0px;
+}
+
+.main_content button:hover
+{
+    outline: solid #ffffff 4px;
+}
+
+.main_content button:active
+{
+    background-color: #b6875b;
+    scale: 0.9;
+    outline: solid white 0px;
+}
+
+.main_content a
+{
+    font-size: 30px;
+    color: white;
+    opacity: 0.7;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-left: 10px;
+}
+.main_content a:hover
+{
+    opacity: 1;
+}
+
+.download_alert
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.438);
+}
+
+.download_alert .window
+{
+    width: 80vh;
+    height: 80vh;
+    background-color: white;
+    padding: 4vh;
+    border-radius: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.download_alert .window p
+{
+    overflow-y: scroll;
+}
+
+.download_alert .window .actions
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14vh;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+}
+
+.download_alert .window .actions button
+{
+    width: 40vh;
+    height: 7vh;
+    font-size: 3.5vh;
+    background-color: #FFB978;
+    border: 0px white solid;
+    transition: all 0.2s;
+    border-radius: 1vh;
+    color: white;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.226);
+
+}
+
+.download_alert .window .actions button:hover
+{
+    background-color: #b6875b;
+}
+
+.download_alert .window .actions button:active
+{
+    background-color: #b6875b;
+    scale: 0.9;
+}
+
+.hidden
+{
+    translate: all 0.4s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+@media (pointer: coarse)  
+{
+
+    body
+    {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .background
+    {
+        background-position-x: 50%;
+        background-position-y: -100px;
+        filter: blur(0.5vh);
+    }
+
+    .phone_case
+    {
+        background-color: transparent;
+        width: 100%;
+        height: 50%;
+        align-items: unset;
+        /* justify-content: unset; */
+    }
+    .phone
+    {
+        width: 45%;
+        position: absolute;
+        bottom: -4vh;
+    }
+    .main_content
+    {
+        background-color: white;
+        margin: 0;
+        width: 100%;
+        height: 50%;
+        padding: 0;
+        text-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #264653;
+        border-radius: 5vh 5vh 0vh 0vh;
+    }
+
+    .main_content h1
+    {
+        font-size: 5vh;
+    }
+    .main_content p
+    {
+        width: 90%;
+        text-align: center;
+        font-size: 3vh;
+    }
+
+    .main_content a 
+    {
+        color: black;
+        opacity: 0.4;
+    }
+    .download_alert .window .actions
+    {
+        height: 20vh;
+    }
+}

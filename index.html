@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unellez Portal App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="resources/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="foreground"></div>
+    <div class="phone_case">
+        <img class="phone" src="resources/img/Unellez Phone.png" alt="">
+    </div>
+    <div class="main_content">
+        <h1><strong>UNELLEZ</strong> Portal</h1>
+        <p>La Mejor Aplicación Para Administrar tu cuenta de estudiante</p>
+        <button id="trigger_download" >Descargar</button>
+        <a href="">Sobre Nosotros</a>
+    </div>
+
+    <div class="download_alert hidden">
+        <div class="window">
+            <h1>Aviso</h1>
+            <p>
+                <Strong>Descargo de responsabilidad</Strong> <br> <br>El siguiente documento establece los términos y condiciones de uso de la aplicación "UNELLEZ Portal App". Al utilizar esta aplicación, el usuario acepta los siguientes términos y condiciones:
+                <br><br>
+                <strong>Naturaleza de la Aplicación:</strong> <br>
+                La aplicación "UNELLEZ Portal App" no es oficial de la plataforma UNELLEZ. Es simplemente una herramienta diseñada para simplificar la administración de páginas con el fin de brindar mayor comodidad al usuario.
+                <br><br>
+                <strong>Fines de Lucro:</strong> <br>
+                Esta aplicación no tiene fines de lucro. No se obtiene ningún beneficio económico a través de su uso o distribución.
+                <br><br>
+                <strong>Responsabilidad del Usuario:</strong> <br>
+                El uso de la aplicación "UNELLEZ Portal App" es responsabilidad del usuario. No nos hacemos responsables por cualquier daño, pérdida o inconveniente que pueda surgir del uso de la aplicación.
+                <br><br>
+                <strong>Exactitud de la Información:</strong> <br>
+                A pesar de nuestros esfuerzos por brindar un servicio de calidad, no podemos garantizar la exactitud, confiabilidad o actualidad de la información proporcionada a través de la aplicación. Los usuarios son responsables de verificar la información directamente con la plataforma oficial de UNELLEZ.
+                <br><br>
+                <strong>Privacidad:</strong><br>
+                La aplicación "UNELLEZ Portal App" no recopila ni almacena información personal de los usuarios. Sin embargo, el acceso a ciertos datos de la plataforma UNELLEZ a través de la aplicación está sujeto a las políticas de privacidad de UNELLEZ.
+                <br><br>
+                <strong>Modificaciones:</strong> <br>
+                Nos reservamos el derecho de modificar, actualizar o discontinuar la aplicación "UNELLEZ Portal App" en cualquier momento, sin previo aviso.
+                <br><br>
+                <strong>Aceptación de los Términos:</strong> <br>
+                Al utilizar la aplicación "UNELLEZ Portal App", usted acepta los términos y condiciones establecidos en este documento. <br><br> Si no está de acuerdo con estos términos, le recomendamos que descontinúe el uso de la aplicación y salga del sitio Web inmediatamente.
+                <br><br>
+                Al utilizar la aplicación "UNELLEZ Portal App", el usuario manifiesta su conformidad con los términos y condiciones establecidos en este documento.
+            </p>
+            <div class="actions">
+                <button id="confirm_download">Acceptar y Descargar</button>
+            </div>        
+        </div>
+    </div>
+</body>
+
+<script>
+    const HTML_ITEMS = 
+    {
+        trigger_download_button: document.querySelector('#trigger_download'),
+        confirm_download_button: document.querySelector('#confirm_download'),
+        download_alert: document.querySelector('.download_alert')
+    }
+
+    HTML_ITEMS.trigger_download_button.addEventListener('click', (e)=>{
+        e.preventDefault(),
+        HTML_ITEMS.download_alert.classList.remove('hidden');
+    })
+
+    HTML_ITEMS.confirm_download_button.addEventListener('click', (e)=>{
+        e.preventDefault(),
+        elm = document.createElement('a'),
+        elm.setAttribute('href', './resources/apk/unellez_portal_app.apk')
+        elm.click();
+        HTML_ITEMS.download_alert.classList.add('hidden');
+    })
+    
+</script>
+
+</html>
